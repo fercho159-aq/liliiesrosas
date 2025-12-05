@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mildred Rios | Links</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Floating hearts decoration -->
+    <div class="floating-hearts">
+        <span class="heart" style="--delay: 0s; --left: 10%;">♥</span>
+        <span class="heart" style="--delay: 2s; --left: 20%;">♥</span>
+        <span class="heart" style="--delay: 4s; --left: 80%;">♥</span>
+        <span class="heart" style="--delay: 1s; --left: 90%;">♥</span>
+        <span class="heart" style="--delay: 3s; --left: 50%;">♥</span>
+        <span class="heart" style="--delay: 5s; --left: 30%;">♥</span>
+        <span class="heart" style="--delay: 2.5s; --left: 70%;">♥</span>
+    </div>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-image-wrapper">
+                <div class="profile-ring"></div>
+                <img src="profile.jpg" alt="Mildred Rios" class="profile-image">
+            </div>
+            <h1 class="profile-name">Mildred Rios</h1>
+            <p class="profile-bio">✨ @liliiesrosas ✨</p>
+            <div class="sparkle-divider">
+                <span>✿</span>
+                <span>✿</span>
+                <span>✿</span>
+            </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="links-section">
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@liliiesrosas?_r=1&_t=ZS-91xHO4IJVjd" target="_blank"
+                class="link-card tiktok">
+                <div class="link-icon">
+                    <i class="fab fa-tiktok"></i>
+                </div>
+                <span class="link-text">TikTok</span>
+                <div class="link-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/riomildred?igsh=MWRsNzh4Z21seml5aQ%3D%3D&utm_source=qr" target="_blank"
+                class="link-card instagram">
+                <div class="link-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <span class="link-text">Instagram</span>
+                <div class="link-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:mildredrios0@gmail.com" class="link-card email">
+                <div class="link-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <span class="link-text">Email</span>
+                <div class="link-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with <span class="heart-icon">♥</span> for Mildred</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add sparkle effect on hover
+        document.querySelectorAll('.link-card').forEach(card => {
+            card.addEventListener('mouseenter', function (e) {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', function (e) {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+
+</html>

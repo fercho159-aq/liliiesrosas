@@ -1,0 +1,383 @@
+/* ============================================
+   GIRLY LINKTREE STYLES
+   A beautiful, feminine design with soft pinks,
+   gradients, and playful animations
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink-light: #ffd6e0;
+    --pink-medium: #ffacc7;
+    --pink-dark: #ff6b9d;
+    --pink-deep: #e84a7f;
+    --lavender: #e8d5f2;
+    --peach: #ffecd2;
+    --cream: #fff9f5;
+    --gold: #d4a574;
+    --text-dark: #4a3347;
+    --text-light: #6b5a68;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg,
+            var(--pink-light) 0%,
+            var(--lavender) 25%,
+            var(--peach) 50%,
+            var(--pink-light) 75%,
+            var(--lavender) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating Hearts */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    color: rgba(255, 107, 157, 0.3);
+    animation: floatUp 10s ease-in-out infinite;
+    animation-delay: var(--delay);
+    left: var(--left);
+    bottom: -50px;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    90% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(360deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-image-wrapper {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 20px;
+}
+
+.profile-ring {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink-dark), var(--lavender), var(--pink-medium));
+    animation: ringRotate 4s linear infinite;
+}
+
+@keyframes ringRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-image {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+    z-index: 1;
+}
+
+.profile-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.profile-bio {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.sparkle-divider {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    color: var(--pink-dark);
+    font-size: 1rem;
+}
+
+.sparkle-divider span {
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.sparkle-divider span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.sparkle-divider span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+/* Links Section */
+.links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--text-dark);
+    box-shadow:
+        0 4px 15px rgba(255, 107, 157, 0.15),
+        0 2px 6px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.link-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transition: left 0.5s ease;
+}
+
+.link-card:hover::before {
+    left: 100%;
+}
+
+.link-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow:
+        0 15px 35px rgba(255, 107, 157, 0.25),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.link-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.link-card:hover .link-icon {
+    transform: rotate(10deg) scale(1.1);
+}
+
+/* TikTok */
+.link-card.tiktok .link-icon {
+    background: linear-gradient(135deg, #25f4ee, #fe2c55);
+    color: white;
+}
+
+/* Instagram */
+.link-card.instagram .link-icon {
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+}
+
+/* Email */
+.link-card.email .link-icon {
+    background: linear-gradient(135deg, var(--pink-medium), var(--pink-dark));
+    color: white;
+}
+
+.link-text {
+    flex: 1;
+    font-weight: 500;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.link-arrow {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--pink-dark);
+}
+
+.link-card:hover .link-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.footer .heart-icon {
+    color: var(--pink-dark);
+    display: inline-block;
+    animation: heartbeat 1.5s ease infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    body {
+        padding: 30px 15px;
+    }
+
+    .profile-name {
+        font-size: 1.6rem;
+    }
+
+    .link-card {
+        padding: 15px 20px;
+    }
+
+    .link-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Extra touch - glowing effect on load */
+@keyframes glowIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.link-card {
+    animation: glowIn 0.6s ease forwards;
+}
+
+.link-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.link-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.link-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
